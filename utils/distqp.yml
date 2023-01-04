@@ -1,0 +1,45 @@
+task:
+  distributedQP_cnum3_dist5_skew0.8_seed0
+
+header:
+  - fedavg
+  - mifa
+flt:
+  R: '<30'
+
+legend_flt:
+  - NET
+
+ploter:
+  plot:
+    - x: communication_round
+      y: test_loss
+#    - x: communication_round
+#      y: valid_loss
+#    - x: communication_round
+#      y: train_loss
+#  group_plot:
+#    - x: communication_round
+#      y: test_loss
+  bar:
+    - x: client_id
+      y: client_data_vol
+    - x: client_id
+      y: data_size
+  trace_2d:
+    - trace: model
+      scatter: ['global_optimal', 'client_optimal']
+  scatter:
+    - position: active_mode
+      xlabel: communication_round
+      ylabel: client_id
+      title: active_mode
+info:
+  final_value:
+    - valid_loss
+    - test_loss
+    - train_loss
+  min_value:
+    - test_loss
+  group_mean_with_std:
+    - test_loss

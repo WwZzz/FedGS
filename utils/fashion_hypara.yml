@@ -1,0 +1,41 @@
+task:
+  fashion_classification_cnum100_dist1_skew0.79_seed0
+header:
+  - fedavg
+flt:
+#  R: '300'
+#  K: '>1'
+#  S: '0'
+  NET: 'ideal'
+
+legend_flt:
+  - LR
+  - K
+
+ploter:
+  plot:
+    - x: communication_round
+      y: valid_loss
+      xlabel: communication_round
+      linewidth: 0.5
+      ylabel: validating_loss
+      title: tuning hypara for fashion
+    - x: communication_round
+      y: valid_accuracy
+      xlabel: communication_round
+      ylabel: validating_accuracy
+      title: tuning hypara for fashion
+      c: y
+
+
+info:
+  final_value:
+    - valid_loss
+  group_mean_with_std:
+    - valid_loss
+    - valid_loss_dist
+  var:
+    - valid_loss_dist
+  min_value:
+    - valid_loss
+    - mean_valid_loss

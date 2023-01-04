@@ -1,0 +1,23 @@
+#filter
+task:
+  mnist_classification_cnum100_dist0_skew0_seed0
+header:
+  - fedavg
+  - fedprox
+flt:
+  B: <512
+  LR: '0.1'
+legend_flt:
+  - B
+
+#analyser
+ploter:
+  plot:
+    - x: communication_round
+      y: valid_loss
+  bar:
+    - x: client_id
+      y: valid_loss_dist
+info:
+  final_value:
+    - valid_loss

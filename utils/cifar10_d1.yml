@@ -1,0 +1,59 @@
+#filter
+task:
+  cifar10_classification_cnum100_dist1_skew0.79_seed0
+header:
+  - graph_sp
+  - fedavg
+
+flt:
+  R: '1000'
+  NET: "['ideal', 'F3AST-Smartphones']"
+  LR: '0.03'
+  E: '5'
+  S: '<5'
+
+legend_flt:
+  - NET
+  - E
+  - LR
+#analyser
+ploter:
+#  plot:
+#    - x: communication_round
+#      y: valid_loss
+#      linewidth: 0.2
+#    - x: communication_round
+#      y: valid_accuracy
+#      c: y
+#  bar:
+#    - x: client_id
+#      y: sampled_time_dist
+#  scatter:
+#    - position: active_mode
+#      color: g
+#      splited: 1
+#      s: 0.1
+#  group_plot:
+#    - x: communication_round
+#      y: valid_loss
+#      splited: 1
+#    - x: communication_round
+#      y: valid_accuracy
+#      splited: 1
+  combination:
+    - scatter:
+        - position: active_mode
+          color: g
+          s: 0.05
+        - position: selected_clients
+          color: r
+          xlabel: communication_round
+          ylabel: client_id
+          s: 0.05
+      splited: 1
+
+info:
+  min_value:
+    - valid_loss
+  group_mean_with_std:
+    - valid_loss

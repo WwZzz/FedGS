@@ -1,0 +1,88 @@
+task:
+#  fashion_classification_cnum100_dist4_skew0.1_seed0
+  fashion_classification_cnum100_dist4_skew0.7_seed0
+#  fashion_classification_cnum100_dist4_skew0.8_seed0
+#  fashion_classification_cnum100_dist4_skew0.9_seed0
+header:
+#  - uniform_sample
+#  - mdsample
+#  - powerofchoice
+  - fedgs_alpha1.0
+  - nfedprox_mu0.01
+flt:
+  K: '10'
+#  NET: "['ideal','YCycle-0.9','YMinFirst-0.9']"
+#  NET: YCycle-0.9
+#  NET: YMinFirst-0.9
+  NET: LessDataFirst-0.9
+#  S: "0"
+#legend_flt:
+#  - NET
+#  - S
+
+ploter:
+#  plot:
+#    - x: communication_round
+#      y: valid_loss
+#      xlabel: communication_round
+#      linewidth: 0.5
+#      ylabel: validating_loss
+#      title: tuning hypara for fashion
+#    - x: communication_round
+#      y: valid_accuracy
+#      xlabel: communication_round
+#      ylabel: validating_accuracy
+#      title: tuning hypara for fashion
+#      c: y
+#  scatter:
+#    - position: active_mode
+#      color: g
+#      ylabel: Client ID
+#      xlabel: Communication Round
+#      s: 0.1
+#      title: FashionMNIST-YC0.9
+  group_plot:
+    - x: communication_round
+      y: test_loss
+#      colors:
+#        - r
+#        - g
+#        - blue
+#        - orange
+      xlabel: communication_round
+      ylabel: test_loss
+      title: YMF-0.9 on FashionMNIST
+#  vir_bar:
+#    - x: client_id
+#      y: sampled_time_dist
+#        #      splited: 1
+#
+#      group: method
+#      splited: 1
+#      num_cols: 1
+#      colors:
+#        - r
+#        - g
+#        - blue
+#        - orange
+
+info:
+  final_value:
+    - valid_loss
+    - mean_valid_loss
+  min_value:
+    - valid_loss
+    - mean_valid_loss
+    - test_loss
+  max_value:
+    - test_accuracy
+    - mean_valid_accuracy
+  group_testing_optimal_value:
+    - test_accuracy
+    - test_loss
+    - mean_valid_accuracy
+
+  group_mean_of_min_value:
+    - test_loss
+    - valid_loss
+#  var:

@@ -1,0 +1,54 @@
+task:
+  synthetic_regression_cnum30_dist10_skew0.5_seed0
+header:
+  - mdsample
+  - uniform_sample
+  - dagbs
+  - fewfirst
+flt:
+  R: '300'
+  K: '10'
+  LR: '0.1'
+#  S: '0'
+#  NET: 'LessDataFirst-0.7'
+#  NET: MoreDataFirst-0.7
+  NET: Homogeneous-0.5
+#  NET: LogNormal-0.5
+#  NET: SinLogNormal-0.5
+#  NET: ideal
+#  NET: "['ideal', 'SmallFirst-1']"
+
+#legend_flt:
+#  - NET
+
+ploter:
+  group_plot:
+    - x: communication_round
+      y: valid_loss
+      xlabel: communication_round
+      ylabel: valid_loss
+    - x: communication_round
+      y: valid_accuracy
+      xlabel: communication_round
+      ylabel: valid_accuray
+    - x: communication_round
+      y: mean_valid_loss
+      xlabel: communication_round
+      ylabel: mean_valid_loss
+#  bar:
+#    - x: client_id
+#      y: sampled_time_dist
+#      group: method
+info:
+  final_value:
+    - valid_loss
+  group_mean_with_std:
+    - valid_loss
+    - valid_loss_dist
+    - valid_accuracy
+    - test_loss
+    - test_accuracy
+    - mean_valid_loss
+    - mean_valid_accuracy
+  var:
+    - valid_loss_dist

@@ -1,0 +1,31 @@
+task:
+  synthetic_regression_cnum30_dist10_skew0.5_seed0
+header:
+  - mdsample
+  - uniform_sample
+
+flt:
+  NET: Homogeneous-0.8
+  E: '5'
+ploter:
+  bar:
+    - x: client_id
+      y: sampled_time_dist
+  scatter:
+    - position: active_mode
+      color: g
+      s: 0.6
+      splited: 1
+#    - position: active_mode
+#      xlabel: communication_round
+#      ylabel: client_id
+#    - position: selected_clients
+#      xlabel: communication_round
+#      ylabel: client_id
+#  combination:
+#    - scatter:
+#        - position: active_mode
+#          color: g
+#        - position: selected_clients
+#          xlabel: communication_round
+#          ylabel: client_id

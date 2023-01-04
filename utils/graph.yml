@@ -1,0 +1,58 @@
+#filter
+task:
+  mnist_classification_cnum20_dist1_skew0.79_seed0
+header:
+  - graph_sp
+  - fedavg
+
+flt:
+  R: '4'
+#  NET: "F3AST-Smartphones"
+#  S: '>1'
+
+legend_flt:
+  - NET
+  - S
+  - LR
+#analyser
+ploter:
+  plot:
+    - x: communication_round
+      y: valid_loss
+      linewidth: 0.3
+    - x: communication_round
+      y: valid_accuracy
+      c: y
+#  bar:
+#    - x: client_id
+#      y: sampled_time_dist
+  group_plot:
+    - x: communication_round
+      y: valid_loss
+    - x: communication_round
+      y: valid_accuracy
+  scatter:
+    - position: active_mode
+      color: g
+      splited: 1
+#    - position: active_mode
+#      xlabel: communication_round
+#      ylabel: client_id
+#    - position: selected_clients
+#      xlabel: communication_round
+#      ylabel: client_id
+#  combination:
+#    - scatter:
+#        - position: active_mode
+#          color: g
+#        - position: selected_clients
+#          xlabel: communication_round
+#          ylabel: client_id
+
+info:
+  min_value:
+    - valid_loss
+  group_mean_with_std:
+    - valid_loss
+  var:
+    - sampled_time_dist

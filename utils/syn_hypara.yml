@@ -1,0 +1,42 @@
+task:
+  synthetic_regression_cnum30_dist10_skew0.5_seed0
+header:
+  - fedavg
+flt:
+  R: '300'
+  K: '>1'
+  S: '0'
+  NET: 'ideal'
+
+legend_flt:
+  - LR
+  - K
+
+ploter:
+  plot:
+    - x: communication_round
+      y: valid_loss
+      xlabel: communication_round
+      linewidth: 1
+      ylabel: validating_loss
+      title: tuning hypara for synthetic(0.5,0.5)
+    - x: communication_round
+      y: valid_accuracy
+      xlabel: communication_round
+      ylabel: validating_accuracy
+      title: tuning hypara for synthetic(0.5,0.5)
+      c: y
+    - x: communication_round
+      y: test_loss
+      xlabel: communication_round
+      ylabel: testing_loss
+      title: tuning hypara for synthetic(0.5,0.5)
+
+info:
+  final_value:
+    - valid_loss
+  group_mean_with_std:
+    - valid_loss
+    - valid_loss_dist
+  var:
+    - valid_loss_dist

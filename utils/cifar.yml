@@ -1,0 +1,34 @@
+#filter
+task:
+  cifar10_classification_cnum20_dist1_skew0.79_seed0
+header:
+  - graph_sp
+  - fedavg
+
+flt:
+  R: '>100'
+  NET: ideal
+#  S: '1'
+
+legend_flt:
+  - NET
+#analyser
+ploter:
+#  plot:
+#    - x: communication_round
+#      y: valid_loss
+#    - x: communication_round
+#      y: valid_accuracy
+  bar:
+    - x: client_id
+      y: sampled_time_dist
+  group_plot:
+    - x: communication_round
+      y: valid_loss
+    - x: communication_round
+      y: valid_accuracy
+info:
+  min_value:
+    - valid_loss
+  group_mean_with_std:
+    - valid_loss

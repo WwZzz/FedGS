@@ -1,0 +1,92 @@
+#filter
+task:
+  synthetic_regression_cnum30_dist10_skew0.5_seed0
+header:
+  - dagbs
+#  - dagbs_alpha10.0
+#  - fewfirst_sampling
+#  - fedavg
+#  - graph_sp
+#  - fedprox
+
+flt:
+  R: '200'
+  NET: "['F3AST-Smartphones','MIFA-p0.7','F3AST-Uneven']"
+#  S: '0'
+#  NET: "['F3AST-Smartphones', 'MIFA-p0.7', 'ideal']"
+#  NET: "['ideal']"
+  S: '0'
+
+legend_flt:
+  - NET
+  - S
+  - LR
+#analyser
+ploter:
+#  plot:
+#    - x: communication_round
+#      y: valid_loss
+#      linewidth: 2
+#      splited: 1
+#    - x: communication_round
+#      y: valid_accuracy
+#      c: y
+#    - x: communication_round
+#      y: mean_valid_loss
+#  bar:
+#    - x: client_id
+#      y: sampled_time_dist
+#      group: method
+#    - x: client_id
+#      y: valid_loss_dist
+#      group: method
+#  group_plot:
+#    - x: communication_round
+#      y: valid_loss
+#      xlabel: communication_round
+#      ylabel: valid_loss
+#    - x: communication_round
+#      y: valid_accuracy
+#      xlabel: communication_round
+#      ylabel: valid_accuracy
+#      ylim:
+#        - 0.4
+#        - 1
+#    - x: communication_round
+#      y: mean_valid_loss
+#      xlabel: communication_round
+#      ylabel: mean_valid_loss
+  scatter:
+    - position: active_mode
+      color: g
+      s: 1
+      splited: 1
+##    - position: active_mode
+##      xlabel: communication_round
+##      ylabel: client_id
+#    - position: selected_clients
+#      xlabel: communication_round
+#      ylabel: client_id
+#      splited: 1
+#  combination:
+#    - scatter:
+#        - position: active_mode
+#          color: g
+#          s: 0.5
+#        - position: selected_clients
+#          xlabel: communication_round
+#          ylabel: client_id
+#          color: r
+#          s: 1
+#      splited: 1
+
+info:
+  final_value:
+    - valid_loss
+    - test_loss
+  group_mean_with_std:
+    - valid_loss
+    - valid_loss_dist
+  var:
+    - sampled_time_dist
+    - valid_loss_dist

@@ -1,0 +1,34 @@
+task:
+  cifar10_classification_cnum100_dist4_skew0.75_seed0
+header:
+  - mdtest
+
+flt:
+  NET: "['LogNormal-0.5', 'SinLogNormal-0.5']"
+#  NET: "['MoreDataFirst-0.9','LessDataFirst-0.9']"
+#  E: '5'
+
+legend_flt:
+  - NET
+ploter:
+#  bar:
+#    - x: client_id
+#      y: sampled_time_dist
+  scatter:
+    - position: active_mode
+      color: g
+      s: 0.1
+      splited: 1
+#    - position: active_mode
+#      xlabel: communication_round
+#      ylabel: client_id
+#    - position: selected_clients
+#      xlabel: communication_round
+#      ylabel: client_id
+#  combination:
+#    - scatter:
+#        - position: active_mode
+#          color: g
+#        - position: selected_clients
+#          xlabel: communication_round
+#          ylabel: client_id
